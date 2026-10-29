@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Estante Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>📚 Minha Estante Digital</h1>
+      <p>Organize suas leituras de forma simples</p>
+    </header>
+
+    <!-- Card de Perfil do Leitor -->
+    <section id="card-perfil" class="card-perfil">
+      <div class="perfil-header">
+        <div>
+          <h2 id="exibir-nome">@leitor</h2>
+          <span class="badge-genero" id="exibir-genero">Gênero favorito</span>
+        </div>
+        <button id="btn-editar-perfil" class="btn-secundario">Editar Perfil</button>
+      </div>
+      <div class="perfil-detalhes">
+        <p>📖 <strong>Livro Favorito:</strong> <span id="exibir-livro-fav">-</span></p>
+        <p>✍️ <strong>Autor(a) Favorito(a):</strong> <span id="exibir-autor-fav">-</span></p>
+      </div>
+    </section>
+
+    <!-- Formulário de Livros -->
+    <form id="form-livro">
+      <div class="input-group">
+        <input type="text" id="titulo" placeholder="Título do livro" required>
+        <input type="text" id="autor" placeholder="Autor(a)" required>
+        <button type="submit">Adicionar Livro</button>
+      </div>
+    </form>
+
+    <!-- Lista de Livros -->
+    <section class="lista-container">
+      <h2>Meus Livros</h2>
+      <ul id="lista-livros"></ul>
+    </section>
+  </main>
+
+  <!-- Modal para Criar/Editar Perfil -->
+  <div id="modal-perfil" class="modal hidden">
+    <div class="modal-content">
+      <h2>👤 Perfil do Leitor</h2>
+      <form id="form-perfil">
+        <input type="text" id="perfil-nome" placeholder="Seu nome ou @nickname" required>
+        <input type="text" id="perfil-genero" placeholder="Gênero Literário Favorito (ex: Suspense)" required>
+        <input type="text" id="perfil-livro-fav" placeholder="Seu Livro Favorito" required>
+        <input type="text" id="perfil-autor-fav" placeholder="Seu(sua) Autor(a) Favorito(a)" required>
+        
+        <div class="modal-acoes">
+          <button type="submit">Salvar Perfil</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
