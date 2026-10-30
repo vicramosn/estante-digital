@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 12px;
   color: #2d3748;
 }
 
@@ -23,71 +23,65 @@ body {
   max-width: 650px;
   border-radius: 16px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  padding: 30px;
+  padding: 20px;
   overflow: hidden;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- CABEÇALHO --- */
 header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #1a202c;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 header p {
   color: #718096;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
-/* --- CARD DE PERFIL COLORIDO --- */
+/* --- CARD DE PERFIL --- */
 .card-perfil {
   background: linear-gradient(to right, #ebf8ff, #eef2ff);
   border: 1px solid #c3dafe;
   border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  padding: 16px;
+  margin-bottom: 20px;
 }
 
 .perfil-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  gap: 8px;
 }
 
 .perfil-header h2 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #2b6cb0;
+  word-break: break-word;
 }
 
 .badge-genero {
   background: linear-gradient(135deg, #f687b3 0%, #d53f8c 100%);
   color: white;
-  font-size: 0.75rem;
-  padding: 4px 10px;
+  font-size: 0.7rem;
+  padding: 3px 8px;
   border-radius: 20px;
   font-weight: bold;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
-  box-shadow: 0 2px 4px rgba(213, 63, 140, 0.3);
 }
 
 .perfil-detalhes p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #4a5568;
-  margin-top: 6px;
+  margin-top: 4px;
+  word-break: break-word;
 }
 
 /* --- BOTÕES --- */
@@ -102,35 +96,30 @@ button {
 .btn-secundario {
   background-color: #edf2f7;
   color: #4a5568;
-  font-size: 0.8rem;
-  padding: 6px 12px;
+  font-size: 0.75rem;
+  padding: 6px 10px;
   border: 1px solid #cbd5e0;
-}
-
-.btn-secundario:hover {
-  background-color: #e2e8f0;
-  color: #2d3748;
+  white-space: nowrap;
 }
 
 /* --- FORMULÁRIOS --- */
 form {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .input-group {
   display: flex;
-  flex-direction: column; /* Deixa os campos em coluna por padrão (ideal para celular) */
+  flex-direction: column; /* Sempre em coluna para evitar cortes no telemóvel */
   gap: 10px;
 }
 
 input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 12px 14px;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.2s;
 }
 
 input:focus {
@@ -146,27 +135,11 @@ form button[type="submit"] {
   box-shadow: 0 4px 10px rgba(72, 187, 120, 0.3);
 }
 
-form button[type="submit"]:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 15px rgba(72, 187, 120, 0.4);
-}
-
-/* Se o ecran for maior (computador/tablet), volta a colocar lado a lado */
-@media (min-width: 600px) {
-  .input-group {
-    flex-direction: row;
-  }
-  
-  form button[type="submit"] {
-    width: auto;
-    padding: 0 20px;
-  }
-}
 /* --- LISTA DE LIVROS --- */
 .lista-container h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #2d3748;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   border-bottom: 2px solid #edf2f7;
   padding-bottom: 6px;
 }
@@ -176,24 +149,18 @@ form button[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: auto;
-  padding-right: 4px;
 }
 
 #lista-livros li {
   background: #f7fafc;
   border: 1px solid #e2e8f0;
-  padding: 14px 16px;
+  padding: 12px;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s;
-}
-
-#lista-livros li:hover {
-  background: #edf2f7;
+  flex-direction: column; /* No telemóvel, os botões ficam embaixo do texto para não espremer */
+  gap: 10px;
 }
 
 #lista-livros li.lido {
@@ -206,33 +173,33 @@ form button[type="submit"]:hover {
   color: #718096;
 }
 
+.lista-livros .info {
+  word-break: break-word;
+}
+
 .acoes {
   display: flex;
   gap: 8px;
+  width: 100%;
+}
+
+.btn-status, .btn-remover {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .btn-status {
   background-color: #ebf8ff;
   color: #3182ce;
   border: 1px solid #bee3f8;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-}
-
-.btn-status:hover {
-  background-color: #bee3f8;
 }
 
 .btn-remover {
   background-color: #fff5f5;
   color: #e53e3e;
   border: 1px solid #fed7d7;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-}
-
-.btn-remover:hover {
-  background-color: #fed7d7;
 }
 
 /* --- MODAL --- */
@@ -248,6 +215,7 @@ form button[type="submit"]:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 16px;
 }
 
 .modal.hidden {
@@ -256,22 +224,16 @@ form button[type="submit"]:hover {
 
 .modal-content {
   background: white;
-  padding: 30px;
+  padding: 24px;
   border-radius: 16px;
-  width: 90%;
-  max-width: 420px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  animation: scaleUp 0.3s ease-in-out;
-}
-
-@keyframes scaleUp {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
 }
 
 .modal-content h2 {
-  margin-bottom: 20px;
-  font-size: 1.4rem;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
   color: #1a202c;
 }
 
@@ -281,19 +243,41 @@ form button[type="submit"]:hover {
   gap: 12px;
 }
 
-.modal-content input {
-  width: 100%;
-}
-
 .modal-acoes button {
   width: 100%;
   padding: 12px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   font-size: 1rem;
-  margin-top: 6px;
 }
 
-.modal-acoes button:hover {
-  opacity: 0.9;
+/* --- AJUSTE PARA TOLDOS / COMPUTADORES MAIORES --- */
+@media (min-width: 650px) {
+  .container {
+    padding: 30px;
+  }
+  
+  .input-group {
+    flex-direction: row;
+  }
+  
+  form button[type="submit"] {
+    width: auto;
+    padding: 0 20px;
+  }
+  
+  #lista-livros li {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .acoes {
+    width: auto;
+  }
+  
+  .btn-status, .btn-remover {
+    flex: initial;
+    padding: 6px 10px;
+  }
 }
