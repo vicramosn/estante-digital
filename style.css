@@ -119,11 +119,12 @@ form {
 
 .input-group {
   display: flex;
+  flex-direction: column; /* Deixa os campos em coluna por padrão (ideal para celular) */
   gap: 10px;
 }
 
 input {
-  flex: 1;
+  width: 100%;
   padding: 12px 16px;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
@@ -139,8 +140,9 @@ input:focus {
 form button[type="submit"] {
   background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
   color: white;
-  padding: 0 20px;
+  padding: 12px;
   font-size: 0.95rem;
+  width: 100%;
   box-shadow: 0 4px 10px rgba(72, 187, 120, 0.3);
 }
 
@@ -149,6 +151,17 @@ form button[type="submit"]:hover {
   box-shadow: 0 6px 15px rgba(72, 187, 120, 0.4);
 }
 
+/* Se o ecran for maior (computador/tablet), volta a colocar lado a lado */
+@media (min-width: 600px) {
+  .input-group {
+    flex-direction: row;
+  }
+  
+  form button[type="submit"] {
+    width: auto;
+    padding: 0 20px;
+  }
+}
 /* --- LISTA DE LIVROS --- */
 .lista-container h2 {
   font-size: 1.2rem;
